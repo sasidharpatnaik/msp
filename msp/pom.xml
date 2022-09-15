@@ -3,5 +3,9 @@
   <groupId>ca.reachweb.msp</groupId>
   <artifactId>msp</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <modules>
+        <module>frontend</module>
+      <module>backend</module>
+    </modules>
+    <packaging>pom</packaging>
 </project>
