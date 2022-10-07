@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
+})
+export class HeaderComponent implements OnInit {
+  isOpen = false;
+  isDropdownOpen = false;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  toggleNavbar() {
+    this.isOpen = !this.isOpen;
+  }
+
+  toggleDropDown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+}

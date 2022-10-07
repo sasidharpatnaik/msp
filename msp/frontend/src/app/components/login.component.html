@@ -1,0 +1,29 @@
+<form (ngSubmit)="form.valid && onSubmit()" name="loginForm" #form="ngForm">
+    <div class="row justify-content-center p-4">
+        <div class="card col-md-4 p-0">
+            <div class="card-header">
+                <label for="login-form" class="fw-bold text-primary">Login</label>
+            </div>
+            <div class="card-body">
+                <div class="pb-2">
+                    <input type="text" class="form-control-sm col-md-8" placeholder="Username" required name="username"
+                        [(ngModel)]="loginForm.username" #username="ngModel">
+                    <div *ngIf="form.submitted && username.invalid" class="alert alert-danger p-1 col-md-8">
+                        Username is required
+                    </div>
+                </div>
+                <div>
+                    <input type="password" class="form-control-sm col-md-8" placeholder="Password" required name="password"
+                        [(ngModel)]="loginForm.password" #password="ngModel">
+                    <div *ngIf="form.submitted && password.invalid" class="alert alert-danger p-1 col-md-8">
+                        Password is required
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <input type="submit" value="Submit" class="btn btn-sm fw-bold btn-primary">&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="Reset" class="btn btn-sm fw-bold btn-primary">
+            </div>
+        </div>
+    </div>
+</form>
