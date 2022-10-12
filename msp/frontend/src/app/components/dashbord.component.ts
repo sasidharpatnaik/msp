@@ -8,8 +8,8 @@ import { faAws } from '@fortawesome/free-brands-svg-icons';
 })
 export class DashbordComponent implements OnInit {
 
-  faAws = faAws;
-
+  sideNavStatus: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
