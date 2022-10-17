@@ -17,14 +17,17 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
+
     @Autowired
     private AuthenticationManager authenticationManager;
+
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
+
     @Autowired
     private JwtUserDetailsService userDetailsService;
 
-    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    @RequestMapping(value = "/authentication", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
@@ -40,6 +43,7 @@ public class JwtAuthenticationController {
     public ResponseEntity<?> saveUser(@RequestBody UserModel user) throws Exception {
         return ResponseEntity.ok(userDetailsService.save(user));
     }
+
     private void authenticate(String username, String password) throws Exception {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));

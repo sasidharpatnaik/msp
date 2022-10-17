@@ -1,10 +1,11 @@
 package ca.reachweb.msp.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserModel {
 
     private String username;
