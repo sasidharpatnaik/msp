@@ -32,7 +32,11 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         String jwtToken = null;
 
         if (requestTokenHeader != null ) {
-            jwtToken = requestTokenHeader.substring(0);
+            if (requestTokenHeader.startsWith("Bearer"))
+                jwtToken = requestTokenHeader.substring(7);
+            else
+                jwtToken = requestTokenHeader.substring(0);
+            logger.info("Jwt Token :"+jwtToken);
             try {
                 username = jwtTokenUtil.getUsernameFromToken(jwtToken);
             } catch (IllegalArgumentException e) {

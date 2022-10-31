@@ -16,6 +16,13 @@
     margin-bottom: 0%;
 }
 
+.nav-list ul {
+    list-style: none;
+    height: 100%;
+    padding: 0%;
+    margin-bottom: 0%;
+}
+
 .nav-list-item {
     display: flex;
     align-items: center;
@@ -23,7 +30,7 @@
 }
 .nav-list-open .nav-list-item:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    border-radius: 2px;
 }
 .nav-list-item i {
     font-size: 20px;
@@ -35,7 +42,7 @@
     line-height: 25px;
 }
 .nav-list-item span {
-    width: 120px;
+    width: 100px;
     text-transform: capitalize;
 }
 

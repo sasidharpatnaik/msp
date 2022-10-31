@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {  HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/header.component';
 import { FooterComponent } from './components/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidebarComponent } from './components/sidebar.component';
+import { ListCandidatesComponent } from './components/list-candidates.component';
+import { SidebarTestComponent } from './components/sidebar-test.component';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,17 @@ import { SidebarComponent } from './components/sidebar.component';
     DashbordComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    ListCandidatesComponent,
+    SidebarTestComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

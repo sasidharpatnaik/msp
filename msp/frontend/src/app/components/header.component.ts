@@ -9,7 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
  
   @Output() sideNavToggled = new EventEmitter<boolean>();
-  menuStatus: boolean = false;
+  menuStatus: boolean = true;
 
   constructor() { }
 
@@ -18,6 +18,12 @@ export class HeaderComponent implements OnInit {
 
   sideNavToggle() {
     this.menuStatus = !this.menuStatus
+    console.log(this.menuStatus)
+    if(this.menuStatus) {
+      sessionStorage.setItem("menuStatus","1")
+    }else {
+      sessionStorage.setItem("menuStatus","0")
+    }
     this.sideNavToggled.emit(this.menuStatus)
   }
 

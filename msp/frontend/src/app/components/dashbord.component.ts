@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faAws } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -7,8 +7,8 @@ import { faAws } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./dashbord.component.css']
 })
 export class DashbordComponent implements OnInit {
-
-  sideNavStatus: boolean = false;
+  
+  sideNavStatus: boolean = true;
   
   constructor() { }
 

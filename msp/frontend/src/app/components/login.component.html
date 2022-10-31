@@ -5,6 +5,11 @@
                 <label for="login-form" class="fw-bold text-primary">Login</label>
             </div>
             <div class="card-body">
+                <div *ngIf="!isValidCredentials">
+                    <label for="validCredentials" class="alert alert-danger fw-bold px-2 py-0 col-md-12">
+                        Wrong username and password
+                    </label>
+                </div>
                 <div class="pb-2">
                     <input type="text" class="form-control-sm col-md-8" placeholder="Username" required name="username"
                         [(ngModel)]="loginForm.username" #username="ngModel">
