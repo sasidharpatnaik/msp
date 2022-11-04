@@ -1,0 +1,46 @@
+<div class="container-fluid g-0">
+    <app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
+    <main>
+        <app-sidebar [sideNavStatus]="sideNavStatus" [ngClass]="{'app-sidebar-open':sideNavStatus}"></app-sidebar>
+        <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}">
+
+            <div class="row justify-content-center p-4">
+                <div class="p-2">Home->Dashboard->Candidates</div>
+                <div class="card col-md-12 p-0">
+                    <div class="card-header">
+                        <label for="login-form" class="fw-bold text-primary">Candidates</label>
+                        <input type="button" value="Add" class="btn btn-sm fw-bold btn-primary fa-pull-right col-md-1 rounded-5">
+                    </div>
+                    <div class="card-body">
+
+                        <table class="table table-striped table-bordered table-sm row-border hover" datatable
+                            [dtOptions]="dtOptions">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Website</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let group of data">
+                                    <td>{{group.name}}</td>
+                                    <td>{{group.email}}</td>
+                                    <td>{{group.website}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        &nbsp;&nbsp;&nbsp;
+
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <app-footer class="p-0"></app-footer>
+            </div>
+        </div>
+    </main>
+</div>
