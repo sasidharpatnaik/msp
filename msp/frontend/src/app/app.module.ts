@@ -14,6 +14,7 @@ import { SidebarComponent } from './components/sidebar.component';
 import { ListCandidatesComponent } from './components/list-candidates.component';
 import { SidebarTestComponent } from './components/sidebar-test.component';
 import { DataTablesModule } from 'angular-datatables';
+import { AddCandidatesComponent } from './components/add-candidates.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DataTablesModule } from 'angular-datatables';
     FooterComponent,
     SidebarComponent,
     ListCandidatesComponent,
-    SidebarTestComponent
+    SidebarTestComponent,
+    AddCandidatesComponent
   ],
   imports: [
     BrowserModule,
