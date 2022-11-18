@@ -43,5 +43,4 @@ app-sidebar {
 .display-area-shrink {
     width: calc(100% - 250px);
     left: 250px;
-
 }
