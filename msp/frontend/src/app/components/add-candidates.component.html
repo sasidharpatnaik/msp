@@ -1,0 +1,84 @@
+<div class="container-fluid g-0">
+    <app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
+    <main>
+        <app-sidebar [sideNavStatus]="sideNavStatus" [ngClass]="{'app-sidebar-open':sideNavStatus}"></app-sidebar>
+        <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}">
+            <form (ngSubmit)="form.valid && onSubmit(form)" name="addCandidateForm" #form="ngForm">
+                <div class="row justify-content-center p-4">
+                    <div class="p-2">Home->Dashboard->Add Candidate</div>
+                    <div class="card col-md-12 p-0">
+                        <div class="card-header">
+                            <label for="login-form" class="fw-bold text-primary">Add Candidate</label>
+                        </div>
+                        <div class="card-body">
+                            <div class="pb-2">
+                                <input type="text" class="form-control-sm col-md-6" placeholder="Name" required
+                                    name="name" [(ngModel)]="addCandidateForm.name" #name="ngModel">
+                                <div *ngIf="form.submitted && name.invalid" class="alert alert-danger p-1 col-md-8">
+                                    Name is required
+                                </div>
+                            </div>
+                            <div class="pb-2">
+                                <input type="text" class="form-control-sm col-md-2" placeholder="Phone No" required
+                                    name="phoneNo" [(ngModel)]="addCandidateForm.phoneNo" #phoneNo="ngModel">
+                                <div *ngIf="form.submitted && phoneNo.invalid" class="alert alert-danger p-1 col-md-2">
+                                    Phone number is required
+                                </div>
+                            </div>
+
+                            <!-- <div class="form-group col-md-10">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="resume">Choose resume</label>
+                                        <input type="file" id="resume" name="resume" style="display: inline;" [multiple]="false" (change)="handleFileInput($event)" 
+                                        class="form-control ng-invalid p-1" required>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="button" value="Upload" class="btn btn-sm fw-bold btn-primary col-sm-8">
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="form-group col-md-10">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group custom-file-button  p-0 ">
+                                            <label class="input-group-text ng-invalid p-1" id="resume" name="resume"
+                                                required>Resume</label>
+                                            <input type="file" class="form-control p-1" id="resume" accept="application/pdf,application/msword,
+                                            application/vnd.openxmlformats-officedocument.wordprocessingml.document" maxlength="52"
+                                                (change)="handleFileInput($event)">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="button" value="Upload"
+                                            class="btn btn-sm fw-bold btn-primary col-sm-8 rounded-5"
+                                            (click)="uploadResume()">
+                                    </div>
+                                </div>
+                                <div *ngIf="this.resumeStatus=='notPresent'" class="alert alert-danger p-1 col-md-6">
+                                    No file or resume is selected
+                                </div>
+                                <div *ngIf="this.resumeStatus=='biggerSize'" class="alert alert-danger p-1 col-md-6">
+                                    File size should be less than 5MB
+                                </div>
+                                <div *ngIf="this.resumeStatus=='wrongFormat'" class="alert alert-danger p-1 col-md-6">
+                                    Wrong File format. 
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <input type="submit" value="Submit"
+                                class="btn btn-sm fw-bold btn-primary col-sm-1 rounded-5">&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <div>
+                <app-footer class="p-0"></app-footer>
+            </div>
+        </div>
+    </main>
+</div>
