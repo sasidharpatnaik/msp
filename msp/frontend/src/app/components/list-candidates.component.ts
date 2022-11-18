@@ -1,3 +1,4 @@
+import { AUTO_STYLE } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -28,14 +29,15 @@ export class ListCandidatesComponent implements OnInit {
 
   ngOnInit(): void {
     this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      lengthMenu: [5, 10, 25, 50],
-      processing: true,
-      columnDefs: [{
-        target: 1,
-        visible: false,
-      }]
+       pagingType: 'full_numbers',
+       pageLength: 5,
+       lengthMenu: [5, 10, 25, 50],
+       processing: true,
+       autoWidth: false,
+       columnDefs: [{
+         target: 1,
+         visible: false,
+       }]
     };
 
     const menuStatus = sessionStorage.getItem("menuStatus")
